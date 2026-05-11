@@ -125,6 +125,12 @@ After WAF propagation (~1-2 minutes), attempts to access the ALB DNS from the bl
 403 Forbidden
 ```
 
+<h2>WAF IPset Blocking Screenshot</h2>
+
+<p align="center">
+  <img src="screenshots/403-forbidden.png" alt="WAF IPset Blocking Screenshot" width="800"/>
+</p>
+
 Removing the IP from the IP Set restored access within minutes — demonstrating how WAF enables **rapid incident response** without any infrastructure changes.
 
 ---
