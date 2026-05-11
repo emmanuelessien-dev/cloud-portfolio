@@ -70,8 +70,20 @@ Launched two EC2 instances (`webserver-A`, `webserver-B`) running Apache HTTPD. 
 
 Each server serves a unique response page, making it easy to verify load balancing is functioning correctly:
 - Server A returns: `Response coming from server A`
+
+<h2>Web Sever A Response Screenshot</h2>
+
+<p align="center">
+  <img src="screenshots/web-server-a-response.png" alt="AWS Architecture Diagram" width="800"/>
+</p>
+
 - Server B returns: `Response coming from server B`
 
+<h2>Web Sever B Response Screenshot</h2>
+
+<p align="center">
+  <img src="screenshots/web-server-b-response.png" alt="Web Sever B Response Screenshot" width="800"/>
+</p>
 Both instances were registered to the ALB target group (`web-server-TG`) with HTTP health checks against `/index.html`.
 
 ### Phase 3 — Application Load Balancer Setup
@@ -137,7 +149,7 @@ aws-waf-web-traffic-filtering/
 ├── scripts/
 │   ├── webserver-a-userdata.sh       # EC2 bootstrap script for Server A
 │   ├── webserver-b-userdata.sh       # EC2 bootstrap script for Server B
-│   └── remove-ip-from-waf.md        # Steps to unblock an IP via CLI
+│   └── remove-ip-from-waf.md         # Steps to unblock an IP via CLI
 └── docs/
     ├── security-group-config.md      # Detailed SG configuration reference
     └── waf-rule-reference.md         # Web ACL and IP Set configuration notes
