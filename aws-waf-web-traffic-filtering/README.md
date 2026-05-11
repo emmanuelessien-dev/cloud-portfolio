@@ -195,4 +195,4 @@ aws-waf-web-traffic-filtering/
 
 ---
 
-*Part of my AWS Cloud Engineering Portfolio — see other projects [here]([../](https://github.com/emmanuelessien-dev/cloud-portfolio))*
+*Part of my AWS Cloud Engineering Portfolio — see other projects [here]((https://github.com/emmanuelessien-dev/cloud-portfolio))*
