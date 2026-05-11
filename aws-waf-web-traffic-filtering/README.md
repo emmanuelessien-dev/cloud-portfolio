@@ -22,24 +22,11 @@ Public-facing web applications are constantly exposed to threats including unaut
 
 ## Architecture
 
-```
-                          ┌─────────────────────────────────────────┐
-                          │              AWS Cloud                   │
-                          │                                          │
-  ┌──────────┐            │  ┌──────────────────┐                   │
-  │ Allowed  │──────────► │  │   AWS WAF         │                   │
-  │ Users    │            │  │  ┌─────────────┐  │  ┌────────────┐  │
-  └──────────┘            │  │  │ IP Set      │  │  │    ALB     │  │  ┌───────────────┐
-                          │  │  │ (Block List)│  ├─►│ Web-server │  ├─►│  webserver-A  │
-  ┌──────────┐            │  │  └─────────────┘  │  │    -LB     │  │  │  (EC2/HTTPD)  │
-  │ Blocked  │──────── X  │  │  ┌─────────────┐  │  └────────────┘  │  └───────────────┘
-  │  IPs     │            │  │  │ Web ACL     │  │                   │
-  └──────────┘            │  │  │ (MywebACL)  │  │                   │  ┌───────────────┐
-                          │  │  └─────────────┘  │                   ├─►│  webserver-B  │
-                          │  └──────────────────┘                   │  │  (EC2/HTTPD)  │
-                          │                                          │  └───────────────┘
-                          └─────────────────────────────────────────┘
-```
+<h2>Architecture Diagram</h2>
+
+<p align="center">
+  <img src="screenshots/architecture-diagram.png" alt="AWS Architecture Diagram" width="800"/>
+</p>
 
 **Traffic flow:**
 1. Inbound requests hit **AWS WAF** before reaching the load balancer
